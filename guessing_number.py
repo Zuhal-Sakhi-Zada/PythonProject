@@ -41,10 +41,6 @@ while attempts > 0:
         else:
             break
 
-  #  hint = "too low" if guess < number else "too high" guess>number else "almost there" guess+-=number
-  #  time.sleep(1)
-   # print(f"{hint}, you have {attempts} attempt(s) left.")
-  #  time.sleep(0.5)
 
     def hint():
         if abs(guess-number) <=2:
