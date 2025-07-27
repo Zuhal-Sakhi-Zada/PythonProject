@@ -139,6 +139,11 @@ root.resizable(False, False) #unveränderbare Größe
 import random
 
 random_quote = random.choice(quotes)
-print(f'"{random_quote["quote"]}\n- {random_quote["author"]}, {random_quote["year"]}')
+quote_text = f'"{random_quote["quote"]}\n\n- {random_quote["author"]}, {random_quote["year"]}'
+
+
+
+label = tk.Label(root, text=quote_text, wraplength=380, justify="center", font=("Helvetica", 10))
+label.pack(pady=30)
 
 root.mainloop()
