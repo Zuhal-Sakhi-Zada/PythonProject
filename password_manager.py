@@ -24,7 +24,7 @@ def load_data():
     try:
         with open(DATA_FILE, "rb") as file:
             encrypted_data = file.read()
-        decrypted_data = fernet.decrypted(encrypted_data)
+        decrypted_data = fernet.decrypt(encrypted_data)
         return json.loads(decrypted_data.decode())
     except:
         return {}
@@ -32,7 +32,7 @@ def load_data():
 def save_data(data):
     encrypted_data = fernet.encrypt(json.dumps(data).encode())
     with open(DATA_FILE, "wb") as file:
-        file.write(enrypted_data)
+        file.write(encrypted_data)
 
 def save_entry():
     website = entry_website.get()
@@ -62,7 +62,7 @@ tk.Label(root, text="Website:").grid(row=0, column=0)
 entry_website = tk.Entry(root, width=30)
 entry_website.grid(row=0, column=1)
 
-tk.Label(root, text="Benutnername:").grid(row=1, column=0)
+tk.Label(root, text="Benutzername:").grid(row=1, column=0)
 entry_username = tk.Entry(root, width=30)
 entry_username.grid(row=1, column=1)
 
