@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import json
 import os
-import cryptography.fernet import Fernet
+from cryptography.fernet import Fernet
 
 DATA_FILE = "data.enc"
 KEY_FILE = "key.key"
